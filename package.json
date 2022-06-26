@@ -1,0 +1,28 @@
+{
+  "name": "post-application",
+  "version": "1.0.0",
+  "description": "Անվճար Ծրագրավորում նախագծի համար հերթական վիդեոն",
+  "main": "index.js",
+  "scripts": {
+	"server" : "json-server db.json",
+	"dev" : "npx webpack"
+  },
+  "keywords": [
+    "Armenia",
+    "Yerevan",
+    "Armenian",
+    "IT",
+    "Community",
+    "Հավեսով",
+    "Ուղիղ",
+    "Եթեր"
+  ],
+  "author": "Sami Hayrapetyan",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "json-server": "^0.17.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

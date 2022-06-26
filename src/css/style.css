@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+	font-family: arial;
+}
+
+:root {
+	--br: 8px;
+}
+
+p {
+	line-height: 25px;
+}
+
+#root {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 45px;
+	max-width: 500px;
+}
+
+#root input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: var(--br);
+}
+
+#root button {
+	padding: 10px;
+	background: green;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	transition: 0.3s;
+	border-radius: var(--br);
+}
+
+#root button:hover {
+	background: rgb(10, 163, 10);
+}
+
+#root textarea {
+	resize: none;
+	width: 100%;
+	border-radius: var(--br);
+	min-height: 350px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+#posts {
+	padding: 45px;
+}
+
+#posts .post {
+	margin-bottom: 25px;	
+}
+
+#posts .post .post_title {
+	margin-bottom: 15px;
+}
+
+button.error {
+	background: gray !important;
+	cursor:no-drop !important;
+}
