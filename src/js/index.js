@@ -1,5 +1,7 @@
 const posts = require("./modules/posts");
-const get = require("./modules/get");
+try {
+	const get = require("./modules/get");
+} catch {}
 
 const DB_URL = "http://localhost:3000/posts";
 
@@ -33,6 +35,20 @@ root.addEventListener("submit", (e) => {
 	}
 });
 
+[input, textarea].forEach(elem => {
+	if (elem.value === "") {
+		btn.classList.add("error");
+	}
+	
+	elem.addEventListener("input", () => {
+		if (input.value !== "" && textarea.value !== "") {
+			btn.classList.remove("error");
+		} else {
+			btn.classList.add("error");
+		}
+	});
+});
+
 try {
 	get(DB_URL, posts)
-} catch {}
+} catch (e) {console.log("Error in get");}

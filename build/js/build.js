@@ -78,7 +78,9 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.js ***!
   \*************************/
 const posts = __webpack_require__(/*! ./modules/posts */ "./src/js/modules/posts.js");
-const get = __webpack_require__(/*! ./modules/get */ "./src/js/modules/get.js");
+try {
+	const get = __webpack_require__(/*! ./modules/get */ "./src/js/modules/get.js");
+} catch {}
 
 const DB_URL = "http://localhost:3000/posts";
 
@@ -112,9 +114,23 @@ root.addEventListener("submit", (e) => {
 	}
 });
 
+[input, textarea].forEach(elem => {
+	if (elem.value === "") {
+		btn.classList.add("error");
+	}
+	
+	elem.addEventListener("input", () => {
+		if (input.value !== "" && textarea.value !== "") {
+			btn.classList.remove("error");
+		} else {
+			btn.classList.add("error");
+		}
+	});
+});
+
 try {
 	get(DB_URL, posts)
-} catch {}
+} catch (e) {console.log("Error in get");}
 })();
 
 /******/ })()
